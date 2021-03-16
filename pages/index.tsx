@@ -57,9 +57,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const results = await query(`
   SELECT DISTINCT kecamatan FROM list_ctp ORDER BY kecamatan ASC
-  `) as Kecamatan[]
+  `)
 
-  const data: Kecamatan[] = JSON.parse(JSON.stringify(results))
+  const data: Kecamatan[] = results
 
   return { props: { data } }
 }

@@ -16,7 +16,7 @@ export async function query(
   try {
     const results = await db.query(q, values)
     await db.end()
-    return results
+    return JSON.parse(JSON.stringify(results))
   } catch (e) {
     throw Error(e.message)
   }
