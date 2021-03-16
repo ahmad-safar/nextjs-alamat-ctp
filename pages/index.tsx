@@ -55,11 +55,9 @@ export const getStaticProps: GetStaticProps = async () => {
   // Don't forget to include the respective types for any props passed into
   // the component.
 
-  const results = await query(`
+  const data: Kecamatan[] = await query(`
   SELECT DISTINCT kecamatan FROM list_ctp ORDER BY kecamatan ASC
   `)
-
-  const data: Kecamatan[] = results
 
   return { props: { data } }
 }
