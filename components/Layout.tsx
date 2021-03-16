@@ -15,8 +15,6 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
     <div className="flex flex-col h-screen">
       <Head>
         <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

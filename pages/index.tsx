@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next'
 import { useState } from 'react'
-import 'tailwindcss/tailwind.css'
 import Layout from '../components/Layout'
 import { CTP, Kecamatan } from '../interfaces'
 import { query } from '../lib/db'
