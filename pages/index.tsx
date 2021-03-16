@@ -34,15 +34,17 @@ const IndexPage = ({ data }: Props) => {
                 ))}
               </select>
             </div>
-            <div className="pt-5 grid gap-6">
-              {listCTP.map(ctp => (
-                <div key={ctp.id}>
-                  <div>Tipe Kantor: {ctp.tipe_kantor}</div>
-                  <div>Kecamatan: {ctp.kecamatan}</div>
-                  <div>Alamat: {ctp.alamat}</div>
-                </div>
-              ))}
-            </div>
+            {listCTP.length ? (
+              <div className="pt-5 grid gap-6">
+                {listCTP.map(ctp => (
+                  <div key={ctp.id}>
+                    <div>Tipe Kantor: {ctp.tipe_kantor}</div>
+                    <div>Kecamatan: {ctp.kecamatan}</div>
+                    <div>Alamat: {ctp.alamat}</div>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
