@@ -1,41 +1,76 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
+import { Transition } from '@headlessui/react'
 import Head from 'next/head'
+import Link from 'next/link'
+import React, { ReactNode, useState } from 'react'
 
 type Props = {
   children?: ReactNode
   title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
+const Layout = ({ children, title = 'This is the default title' }: Props) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <div className="flex flex-col h-screen">
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <nav className="bg-gray-800">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-between h-16">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <button type="button" onClick={() => setIsOpen(!isOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span className="sr-only">Open main menu</span>
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <Link href="/">
+                <a className="flex-shrink-0 flex items-center">
+                  <img className="block lg:hidden h-8 w-auto" src="/logo.svg" alt="Workflow" />
+                  <img className="hidden lg:block h-8 w-auto" src="/logo.svg" alt="Workflow" />
+                  <div className="text-white px-3 py-2 rounded-md text-sm font-medium">Alamat CTP</div>
+                </a>
+              </Link>
+              <div className="hidden sm:block sm:ml-6">
+                <div className="flex space-x-4">
+                  <Link href="/"><a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a></Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <Transition
+          show={isOpen}
+        >
+          <div className="sm:hidden" id="mobile-menu">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link href="/"><a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a></Link>
+            </div>
+          </div>
+        </Transition>
       </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
-)
+      <main className="mb-auto">{children}</main>
+      <footer className="bg-gray-800 text-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between sm:justify-start h-16">
+            <div className="mr-1">&copy; 2021 Tselkalimantan, Inc.</div>
+            <div>Build by<a className="ml-1 underline" href="https://www.facebook.com/ahmadsafar.1996/" target="_blank">Ahmad Safar</a></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
 
 export default Layout
