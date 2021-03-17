@@ -17,6 +17,8 @@ export default function MyApp ({ Component, pageProps }: AppProps) {
         <title>Home | Alamat CTP | Tselkalimantan</title>
 
         <link rel="manifest" href="/manifest.json" />
+        <script async src="https://cdn.jsdelivr.net/npm/pwacompat" crossOrigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="/icons/icon-192x192.png" sizes="192x192" />
         <meta name="theme-color" content="#1f2937" />
       </Head>
       <Component {...pageProps} />
