@@ -23,6 +23,7 @@ Demo: https://alamat-ctp.tselpamasuka.com/
 
 ```
 npm install
-npm run dev # / `npm start` for production
+npm run dev # / `npm run build && npm start` for production
 ```
+
 - Server will run on http://localhost:3000
