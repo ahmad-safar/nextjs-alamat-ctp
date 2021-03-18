@@ -8,13 +8,13 @@ const handler: NextApiHandler = async (req, res) => {
   try {
     if (kecamatan) {
       results = await query(`
-        SELECT * FROM list_ctp
+        SELECT * FROM alamat_ctp
         WHERE kecamatan = ?
       `,
         kecamatan)
     } else {
       results = await query(`
-        SELECT * FROM list_ctp
+        SELECT * FROM alamat_ctp
         ORDER BY id ASC
       `)
     }
