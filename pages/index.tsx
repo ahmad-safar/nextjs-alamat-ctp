@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // the component.
 
   const data: Kecamatan[] = await query(`
-  SELECT DISTINCT kecamatan FROM list_ctp ORDER BY kecamatan ASC
+  SELECT DISTINCT kecamatan FROM alamat_ctp ORDER BY kecamatan ASC
   `)
 
   return { props: { data } }
