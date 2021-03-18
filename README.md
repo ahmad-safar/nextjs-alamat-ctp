@@ -9,6 +9,7 @@ Demo: https://alamat-ctp.tselpamasuka.com/
 - Next.js with TypeScript
 - Tailwind CSS
 - PWA
+- Jest
 
 ## Requirements
 
@@ -25,4 +26,11 @@ Demo: https://alamat-ctp.tselpamasuka.com/
 npm install
 npm run dev # / `npm start` for production
 ```
+
 - Server will run on http://localhost:3000
+
+## Run Jest
+
+```
+npm test
+```
