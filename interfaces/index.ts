@@ -12,7 +12,7 @@ export type User = {
 export type CTP = {
   id: number
   kecamatan: string
-  tipe_kantor: string
+  namaoutlet: string
   alamat: string
 }
 

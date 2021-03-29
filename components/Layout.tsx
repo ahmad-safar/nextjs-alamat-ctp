@@ -36,7 +36,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
                 <a className="flex-shrink-0 flex items-center">
                   <img className="block lg:hidden h-8 w-auto" src="/logo.svg" alt="Workflow" />
                   <img className="hidden lg:block h-8 w-auto" src="/logo.svg" alt="Workflow" />
-                  <div className="text-white px-3 py-2 rounded-md text-sm font-medium">Alamat CTP &amp; TAP</div>
+                  <div className="text-white px-3 py-2 rounded-md text-sm font-medium">Lokasi Ganti 4G</div>
                 </a>
               </Link>
               <div className="hidden sm:block sm:ml-6">

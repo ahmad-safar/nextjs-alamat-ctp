@@ -18,7 +18,7 @@ const IndexPage = ({ data }: Props) => {
   }
 
   return (
-    <Layout title="Alamat CTP &amp; TAP | Telkomsel Kalimantan">
+    <Layout title="Lokasi Ganti 4G | Telkomsel Kalimantan">
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
           <div className="shadow border-gray-200 rounded-lg px-4 py-6">
@@ -37,7 +37,7 @@ const IndexPage = ({ data }: Props) => {
               <div className="pt-5 grid gap-6">
                 {listCTP.map(ctp => (
                   <div key={ctp.id}>
-                    <div>Tipe Kantor: {ctp.tipe_kantor}</div>
+                    <div>Nama Outlet: {ctp.namaoutlet}</div>
                     <div>Kecamatan: {ctp.kecamatan}</div>
                     <div>Alamat: {ctp.alamat}</div>
                   </div>
