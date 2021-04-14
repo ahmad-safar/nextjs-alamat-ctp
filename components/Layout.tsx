@@ -63,7 +63,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between sm:justify-start h-16">
             <div className="mr-1">&copy; 2021 <a className="ml-1 underline" href="https://www.instagram.com/tselkalimantan/" target="_blank">@tselkalimantan</a>, Inc.</div>
-            <div>Build by<a className="ml-1 underline" href="https://www.facebook.com/ahmadsafar.1996/" target="_blank">Ahmad Safar</a></div>
+            <div>Build by<a className="ml-1 underline" href="https://github.com/faropedia/" target="_blank">Ahmad Safar</a></div>
           </div>
         </div>
       </footer>
